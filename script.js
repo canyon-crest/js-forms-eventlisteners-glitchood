@@ -110,7 +110,7 @@ btnCalc.addEventListener("click", () => {
     //      Use .toFixed(2) to format the total.
     //      Example: "Alice, your total is $13.50"
     //      If name is empty, use "Customer" as the default.
-
+});
 clearBtn = document.getElementById("clearBtn");
 clearBtn.addEventListener("click", () => {
 nameInput.value = "";
@@ -130,4 +130,4 @@ myPara.innerHTML = "";
     //         d) Set the service dropdown value to "dinein"
     //         e) Set the output paragraph textContent to ""
         
-})
+
