@@ -111,16 +111,16 @@ btnCalc.addEventListener("click", () => {
     //      Example: "Alice, your total is $13.50"
     //      If name is empty, use "Customer" as the default.
 
-    clearBtn = document.getElementById("clearBtn");
-    clearBtn.addEventListener("click", () => {
-    nameInput.value = "";
-    document.getElementById("r3").checked = true;
-    for (let i = 0; i < checkboxes.length; i++) {
-        checkboxes[i].checked = false;
-    }
-    document.getElementById("serviceSelect").value = "dinein";
-    myPara.innerHTML = "";
-    });
+clearBtn = document.getElementById("clearBtn");
+clearBtn.addEventListener("click", () => {
+nameInput.value = "";
+document.getElementById("r3").checked = true;
+for (let i = 0; i < checkboxes.length; i++) {
+    checkboxes[i].checked = false;
+}
+document.getElementById("serviceSelect").value = "dinein";
+myPara.innerHTML = "";
+});
     // STEP 4: Get the "Clear" button by ID ("clearBtn")
     //         Add a click event listener.
     //         Inside the listener:
