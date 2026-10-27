@@ -46,7 +46,14 @@ btn.addEventListener("click", () => {
 // STEP 3: Get the "Calculate Total" button by ID ("btnCalc")
 //         Add a click event listener.
 //         Inside the listener:
-btnCalc = document.getElementById("btnCalc");
+let radios = document.getElementsByName("rg");
+let myPara = document.getElementById("myPara");
+let checkboxes = document.getElementsByName("cb");
+let btnCalc = document.getElementById("btnCalc");
+let nameInput = document.getElementById("myInput");
+let serviceFeeValue = document.getElementById("serviceSelect")
+
+
 btnCalc.addEventListener("click", () => {
 
 
@@ -56,14 +63,12 @@ btnCalc.addEventListener("click", () => {
     //      one that is .checked, and read its .value.
     //      Convert to a number with parseFloat().
     let price = 0;
-    let radios = document.getElementsByName("rg");
     for (let i = 0; i < radios.length; i++) {
     if (radios[i].checked) {
         price += parseFloat(radios[i].value);
     }
     }
     count = 0;
-    let checkboxes = document.getElementsByName("cb");
     for (let i = 0; i < checkboxes.length; i++) {
     if (checkboxes[i].checked) {
         count += 1;
@@ -75,9 +80,8 @@ btnCalc.addEventListener("click", () => {
     //      Use document.getElementsByName("cb") to get all
     //      topping checkboxes. Loop through and count how
     //      many are .checked. Multiply count by 0.50.
-    let serviceFeeValue = document.getElementById("serviceSelect").value;
     let serviceFee = 0;
-    switch (serviceFeeValue) {
+    switch (serviceFeeValue.value) {
     case "dinein":
         serviceFee = 0;
         break;
@@ -102,15 +106,13 @@ btnCalc.addEventListener("click", () => {
     //   d) Calculate total: size + toppings + service fee
 
     //   e) Get the customer name from the input with ID "myInput"
-    let nameInput = document.getElementById("myInput");
     let customerName = nameInput.value || "Customer";
     //   f) Display the result in the element with ID "myPara":
-    let myPara = document.getElementById("myPara");
     myPara.innerHTML = `${customerName}, your total is \$${price.toFixed(2)}`;
     //      Use .toFixed(2) to format the total.
     //      Example: "Alice, your total is $13.50"
     //      If name is empty, use "Customer" as the default.
-});
+})
 clearBtn = document.getElementById("clearBtn");
 clearBtn.addEventListener("click", () => {
 nameInput.value = "";
